@@ -1,0 +1,17 @@
+[
+    // USER-----------------------------------------
+    {
+        "firstName": "Sam",
+        "lastName": "Paul",
+        "email": "sampleUser@gmail.com",
+        "password": "sample123",
+        "mobileNo": "09151234567"
+    },
+    {
+        "firstName": "Admin",
+        "lastName": "User",
+        "email": "admin@gmail.com",
+        "password": "admin123",
+        "mobileNo": "09151234567"
+    }
+]
