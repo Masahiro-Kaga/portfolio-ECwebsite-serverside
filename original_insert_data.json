@@ -1,17 +1,63 @@
 [
-    // USER-----------------------------------------
-    {
-        "firstName": "Sam",
-        "lastName": "Paul",
-        "email": "sampleUser@gmail.com",
-        "password": "sample123",
-        "mobileNo": "09151234567"
-    },
-    {
-        "firstName": "Admin",
-        "lastName": "User",
-        "email": "admin@gmail.com",
-        "password": "admin123",
-        "mobileNo": "09151234567"
-    }
+  // USER-----------------------------------------
+  {
+    "firstName": "Sam",
+    "lastName": "Paul",
+    "email": "sampleUser@gmail.com",
+    "password": "sample123",
+    "mobileNo": "09151234567"
+  },
+  {
+    "firstName": "Admin",
+    "lastName": "User",
+    "email": "admin@gmail.com",
+    "password": "admin123",
+    "mobileNo": "09151234567"
+  },
+  {
+    "firstName": "Tobby",
+    "lastName": "Maguire",
+    "email": "spiderman@gmail.com",
+    "password": "spidermanOG",
+    "mobileNo": "093211234"
+  },
+
+  {
+    "firstName": "Tee Jae",
+    "lastName": "Calinao",
+    "email": "admin@gmail.com",
+    "password": "Teacher",
+    "mobileNo": "09261234567"
+  },
+
+  {
+    "firstName": "Mongo",
+    "lastName": "Taro",
+    "email": "monmonmon@gmail.com",
+    "password": "monmon",
+    "mobileNo": "6546803454"
+  },
+
+  // PRODUCT schema/model-------------------------------------------
+ 
+  {
+    "name": "Apple",
+    "description": "Sweeeeet",
+    "price": 1500
+  },
+  {
+    "name": "Mango",
+    "description": "Freeeesh",
+    "price": 2000
+  },
+  {
+    "name": "Pine",
+    "description": "Yummy",
+    "price": 2500
+  },
+  {
+    "name": "Banana",
+    "description": "Delicious",
+    "price": 3000
+  }
 ]

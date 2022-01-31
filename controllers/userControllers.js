@@ -18,18 +18,28 @@ module.exports.registerUser = (req, res) => {
 };
 
 module.exports.login = (req, res) => {
-  User.findOne({ email: req.body.email }).then((user) => {
-    if (user === null) {
-      return res.send("No User Found.");
-    } else {
-      const isPasswordCoorect = bcrypt.compareSync(req.body.password,user.password);
-      if(isPasswordCoorect){
-          return res.send({accessToken:auth.createAccessToken(user)})
+  User.findOne({ email: req.body.email })
+    .then((user) => {
+      if (user === null) {
+        return res.send("No User Found.");
+      } else {
+        const isPasswordCoorect = bcrypt.compareSync(
+          req.body.password,
+          user.password
+        );
+        if (isPasswordCoorect) {
+          return res.send({ accessToken: auth.createAccessToken(user) });
+        }
       }
-    }
-  }).catch(err => res.send(err));
+    })
+    .catch((err) => res.send(err));
 };
 
-module.exports.setAdmin = (req,res) =>{
-    console.log(req.body);
-}
+module.exports.setAdmin = (req, res) => {
+  let update = {
+    isAdmin: req.body.isAdmin,
+  };
+  User.findOneAndUpdate(req.params.userId, update, { new: true })
+    .then((result) => res.send(result))
+    .catch((err) => res.send(err));
+};

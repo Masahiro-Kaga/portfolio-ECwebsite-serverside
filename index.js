@@ -17,4 +17,10 @@ app.use(express.json());
 const userRoutes = require('./routes/userRoutes');
 app.use('/users',userRoutes);
 
+const productRoutes = require('./routes/productRoutes');
+app.use('/products',productRoutes);
+
+const orderRoutes = require('./routes/orderRoutes');
+app.use('/orders', orderRoutes);
+
 app.listen(port, ()=> console.log(`Server Running on Localhosl:4000`))

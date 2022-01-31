@@ -7,7 +7,7 @@ const orderSchema = new mongoose.Schema({
     },
     totalAmount : {
         type:Number,
-        required:[true,"Quantity is required"]
+        default:0
     },
     purchasedOn : {
         type:Date,

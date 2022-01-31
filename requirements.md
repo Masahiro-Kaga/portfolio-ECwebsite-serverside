@@ -19,7 +19,7 @@
 - [x] Retrieve single product
 - [x] Create Product (Admin only)
 - [x] Update Product information (Admin only)
-- [ ] Archive Product (Admin only)
+- [x] Archive Product (Admin only)
 - [ ] Non-admin User checkout (Create Order)
 - [ ] Retrieve authenticated user’s orders
 - [ ] Retrieve all orders (Admin only)

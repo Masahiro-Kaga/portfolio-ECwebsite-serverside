@@ -1,10 +1,11 @@
 const express = require("express");
 router = express.Router();
 const userControllers = require("../controllers/userControllers");
-const { verification } = require("../auth");
+const auth = require("../auth")
+const { verification,verifyAdmin } = auth;
 
 router.post("/",userControllers.registerUser);
 router.post("/login",userControllers.login);
-router.post("/setAdmin",verification,userControllers.setAdmin);
+router.put("/setAdmin/:userId",verification,verifyAdmin,userControllers.setAdmin);
 
 module.exports = router;
