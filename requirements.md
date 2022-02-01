@@ -3,7 +3,7 @@
 ## Packages Required:
 - [x] express
 - [x] mongoose
-- [ ] cors
+- [x] cors
 - [x] bcrypt
 - [x] jsonwebtoken
 - [x] nodemon
@@ -20,16 +20,16 @@
 - [x] Create Product (Admin only)
 - [x] Update Product information (Admin only)
 - [x] Archive Product (Admin only)
-- [ ] Non-admin User checkout (Create Order)
-- [ ] Retrieve authenticated user’s orders
-- [ ] Retrieve all orders (Admin only)
+- [x] Non-admin User checkout (Create Order)
+- [x] Retrieve authenticated user’s orders
+- [x] Retrieve all orders (Admin only)
 
 ---
 
 ## Stretch Requirements:
 
-- [ ] Activate Product (Admin Only)  
-- [ ] Display Products Per Order (User Only)
+- [x] Activate Product (Admin Only)  
+- [x] Display Products Per Order (User Only)
 
 ---
 

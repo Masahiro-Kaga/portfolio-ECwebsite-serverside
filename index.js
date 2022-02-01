@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const port = 4000;
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
 
 mongoose.connect("mongodb+srv://masahirokaga:masaMongo@cluster0.mx6qv.mongodb.net/capstone2?retryWrites=true&w=majority",{
     useNewUrlParser:true,

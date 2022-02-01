@@ -43,3 +43,27 @@ module.exports.archiveItem = (req, res) => {
     .then((updatedProductInfo) => res.send(updatedProductInfo))
     .catch((err) => res.send(err));
 };
+
+module.exports.activateProduct = (req, res) => {
+  let updates = {
+    isActive: true,
+  };
+  Product.findByIdAndUpdate(req.params.productId, updates, { new: true })
+    .then((result) => res.send(result))
+    .catch((err) => res.send(err));
+};
+
+// Which is better. How to separately use.
+
+// module.exports.activateProduct = (req, res) => {
+//     let updates = {
+//       isActive: true,
+//     };
+//     Product.findByIdAndUpdate(req.body.productId, updates, { new: true })
+//       .then((result) => res.send(result))
+//       .catch((err) => res.send(err));
+//   };
+  
+
+
+

@@ -1,37 +1,48 @@
-const Order = require("../models/Product");
+const Order = require("../models/Order");
 const User = require("../models/User");
 const Product = require("../models/Product");
 
-module.exports.order = (req,res) =>{
-    if(req.user.isAdmin){
-        return res.send("Action Forbidden.You are admin.")
-    }
-    let isOrdered = await User.findById(req.user.id).then(user =>{
-        let newOrder = {
-            userId:
-            productId:req.body.productId,
-            totalAmount:req.body.totalAmount
-        }
-        user.products.push(newOrder);
-        return user.save().then(user => true).catch(err => err.message)
-    })
-    if(isOrdered !== true){
-        return res.send({message:isOrdered});
-    }
-    
-    // let isOrderedProductUpdated = await Product.findById(req.body.productId).then(product =>{
-    //     let newOrderedUser = {
-    //         userId:req.user.id,
-    //         totalAmount:req.body.totalAmount
-    //     }
-    //     product.customers.push(newOrderedUser);
-    //     return product.save().then(product => true).catch(err => err.message)
-    // })
-    // if(isOrderedProductUpdated !== true){
-    //     return res.send({message:isOrderedProductUpdated});
-    // }
+module.exports.order = async (req, res) => {
+  if (req.user.isAdmin) {
+    return res.send("Action Forbidden.You are admin.");
+  }
+  let newOrderId;
+  let newOrder = new Order({
+    userId: req.user.id,
+    totalAmount: req.body.totalAmount,
+    products: req.body.products,
+  });
+  await newOrder
+    .save()
+    .then((orderObj) => (newOrderId = orderObj.id))
+    .catch((err) => err.message);
 
-    // if(isOrderUpdated && isOrderedProductUpdated){
-    //     return res.send({message:"Ordered Successfully."})
-    // }
-}
+  let orderedProducts = req.body.products;
+  orderedProducts.forEach(async (product) => {
+    await Product.findById(product.productId).then((found) => {
+      found.orders.push({
+        orderId: newOrderId,
+        quantity: product.quantity,
+      });
+      found.save();
+    });
+  });
+};
+
+module.exports.usersOrder = (req, res) => {
+  Order.find({ userId: req.user.id })
+    .then((orders) => res.send(orders))
+    .catch((err) => res.send(err));
+};
+
+module.exports.allOrders = (req, res) => {
+  Order.find({})
+    .then((orders) => res.send(orders))
+    .catch((err) => res.send(err));
+};
+
+module.exports.checkOrderedProduct = (req, res) => {
+  Order.findById(req.params.orderId)
+    .then((order) => res.send(order.products))
+    .catch((err) => res.send(err));
+};

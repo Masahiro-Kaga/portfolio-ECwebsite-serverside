@@ -39,7 +39,7 @@
   },
 
   // PRODUCT schema/model-------------------------------------------
- 
+
   {
     "name": "Apple",
     "description": "Sweeeeet",
@@ -59,5 +59,21 @@
     "name": "Banana",
     "description": "Delicious",
     "price": 3000
+  },
+  // ORDER schema / model -------------------------------------------
+  {
+    "totalAmount": 3500,
+    "products": [
+      {
+          //Apple
+        "productId": "61f77d60e99249ced8fbcb8e",
+        "quantity": 2
+      },
+      {
+          //Mango
+        "productId": "61f77d8e811e04608d6b23cc",
+        "quantity": 1
+      }
+    ]
   }
 ]

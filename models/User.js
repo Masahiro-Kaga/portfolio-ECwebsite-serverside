@@ -24,18 +24,7 @@ const userSchema = new mongoose.Schema({
   isAdmin: {
     type: Boolean,
     default: false,
-  },
-  orders: [
-    {
-      orderId: {
-        type: String,
-        required: [true, "Order ID is required."],
-      },
-      quantity: {
-        type: Number,
-        required: [true, "Quantity is required."],      }
-    },
-  ],
+  }
 });
 
 module.exports = mongoose.model("User", userSchema);

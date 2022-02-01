@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="fetch-axios.js" defer></script>
+</head>
+<body>
+    <h1>EC site</h1>
+    <h3>From JS</h3>
+    <!-- Request From JS(Show console.log & window) ------------------------------- -->
+    <section>
+        <button id="get-btn">Get Data</button>
+        <!-- <button id="post-btn">Post Data</button> -->
+    </section>
+    <p id="data1">Data 1</p>
+
+    <!-- Request From HTML form(Show browser)------------------------ -->
+    <h3>From HTML</h3>
+    <form method="get" action="http://localhost:4000/products/retrieveAllActive">
+        <button type="submit">Get Data</button>
+    </form>
+</body>
+</html>
