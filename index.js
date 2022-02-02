@@ -26,4 +26,4 @@ app.use('/products',productRoutes);
 const orderRoutes = require('./routes/orderRoutes');
 app.use('/orders', orderRoutes);
 
-app.listen(port, ()=> console.log(`Server Running on Localhosl:4000`))
+app.listen(port, ()=> console.log(`Server Running on Localhosl:${port}`))

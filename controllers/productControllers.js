@@ -54,10 +54,12 @@ module.exports.activateProduct = (req, res) => {
 };
 
 // Which is better. How to separately use.
+// Answer is, using params because process of configuration should be lighter.
 
 // module.exports.activateProduct = (req, res) => {
 //     let updates = {
-//       isActive: true,
+//        productId:req.body.productId, 
+//        isActive: true,
 //     };
 //     Product.findByIdAndUpdate(req.body.productId, updates, { new: true })
 //       .then((result) => res.send(result))
