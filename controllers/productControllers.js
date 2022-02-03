@@ -20,6 +20,7 @@ module.exports.retrieveAllActive = (req, res) => {
 
 module.exports.retrieveSingleProduct = (req, res) => {
   Product.findOne({ _id: req.params.productId })
+  // Product.findById(req.params.productId)
     .then((result) => res.send(result))
     .catch((err) => res.send(err));
 };
