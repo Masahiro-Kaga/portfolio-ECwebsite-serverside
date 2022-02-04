@@ -29,17 +29,21 @@
     "password": "Teacher",
     "mobileNo": "09261234567"
   },
-
   {
-    "firstName": "Mongo",
-    "lastName": "Taro",
-    "email": "monmonmon@gmail.com",
-    "password": "monmon",
+    "firstName": "Masahiro",
+    "lastName": "Kaga",
+    "email": "masakaga@gmail.com",
+    "password": "mk",
     "mobileNo": "6546803454"
   },
-
+  {
+    "firstName": "Vice",
+    "lastName": "Ganda",
+    "email": "howAbeautiful@gmail.com",
+    "password": "wao",
+    "mobileNo": "06546803454"
+  },
   // PRODUCT schema/model-------------------------------------------
-
   {
     "name": "Apple",
     "description": "Sweeeeet",
@@ -60,6 +64,17 @@
     "description": "Delicious",
     "price": 3000
   },
+  {
+    "name": "LechonBaboy",
+    "description": "Super Delicious",
+    "price": 30000
+  },
+  {
+    "name": "Chippy",
+    "description": "JunkJunkJunk",
+    "price": 50000
+  },
+
   // ORDER schema / model -------------------------------------------
   {
     "totalAmount": 3500,

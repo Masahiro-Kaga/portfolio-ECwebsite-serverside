@@ -12,24 +12,24 @@
 
 ## Features Required:
 
-- [x] User registration
-- [x] User authentication
-- [x] Set user as admin (Admin only)
-- [x] Retrieve all active products
-- [x] Retrieve single product
-- [x] Create Product (Admin only)
-- [x] Update Product information (Admin only)
-- [x] Archive Product (Admin only)
-- [x] Non-admin User checkout (Create Order)
-- [x] Retrieve authenticated user’s orders
-- [x] Retrieve all orders (Admin only)
+- [x] 01_GET_user registration
+- [x] 02_POST_User authentication
+- [x] 03_PUT_Set user as admin (Admin only)
+- [x] 04_POST_Create Product (Admin only)
+- [x] 05_GET_Retrieve all active products
+- [x] 06_GET_Retrieve single product
+- [x] 07_PUT_Update Product information (Admin only)
+- [x] 08_PUT_Archive Product (Admin only)
+- [x] 09_POST_Non-admin User checkout (Create Order)
+- [x] 10_GET_Retrieve authenticated user’s orders
+- [x] 11_GET_Retrieve all orders (Admin only)
 
 ---
 
 ## Stretch Requirements:
 
-- [x] Activate Product (Admin Only)  
-- [x] Display Products Per Order (User Only)
+- [x] 12_PUT_Activate Product (Admin Only)  
+- [x] 13_GET_Display Products Per Order (User Only)
 
 ---
 
