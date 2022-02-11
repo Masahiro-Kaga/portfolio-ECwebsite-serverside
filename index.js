@@ -1,11 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4002;
 const app = express();
 const cors = require("cors");
+const dotenv = require("dotenv");
 
+dotenv.config();
 
-mongoose.connect("mongodb+srv://masahirokaga:masaMongo@cluster0.mx6qv.mongodb.net/capstone2?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGODB_URI,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 });
@@ -26,4 +28,4 @@ app.use('/products',productRoutes);
 const orderRoutes = require('./routes/orderRoutes');
 app.use('/orders', orderRoutes);
 
-app.listen(port, ()=> console.log(`Server Running on Localhosl:${port}`))
+app.listen(port, ()=> console.log(`Server Running on Localhosl:${process.env.PORT}`))
