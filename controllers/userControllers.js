@@ -43,3 +43,12 @@ module.exports.setAdmin = (req, res) => {
     .then((result) => res.send(result))
     .catch((err) => res.send(err));
 };
+
+module.exports.getUserDetails = (req, res) => {
+  User.findById(req.user.id)
+    .then((result) => res.send(result))
+    .catch((err) => res.send(err));
+  
+  //only this is also ok if user need id, email and isAdmin info.
+  // res.send(req.user);
+};

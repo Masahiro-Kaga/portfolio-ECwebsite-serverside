@@ -10,5 +10,6 @@ router.get("/retrieveSingleProduct/:productId",productControllers.retrieveSingle
 router.put("/updateProductInfo/:productId",verification,verifyAdmin,productControllers.updateProductInfo);
 router.put("/archiveItem/:productId",verification,verifyAdmin,productControllers.archiveItem);
 router.put("/activateProduct/:productId",verification,verifyAdmin,productControllers.activateProduct);
+router.get("/getAllProducts",verification,verifyAdmin,productControllers.getAllProducts);
 
 module.exports = router;

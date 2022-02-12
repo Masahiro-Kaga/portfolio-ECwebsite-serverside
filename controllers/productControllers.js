@@ -1,3 +1,4 @@
+const { send } = require("express/lib/response");
 const Product = require("../models/Product");
 
 module.exports.createProduct = (req, res) => {
@@ -20,8 +21,8 @@ module.exports.retrieveAllActive = (req, res) => {
 
 module.exports.retrieveSingleProduct = (req, res) => {
   Product.findOne({ _id: req.params.productId })
-  // Product.findOne({id: req.params.productId })
-  // Product.findById(req.params.productId)
+    // Product.findOne({id: req.params.productId })
+    // Product.findById(req.params.productId)
     .then((result) => res.send(result))
     .catch((err) => res.send(err));
 };
@@ -55,19 +56,21 @@ module.exports.activateProduct = (req, res) => {
     .catch((err) => res.send(err));
 };
 
+module.exports.getAllProducts = (req, res) => {
+  Product.find({})
+    .then((result) => res.send(result))
+    .catch((err) => res.send(err));
+};
+
 // Which is better. How to separately use.
 // Answer is, using params because process of configuration should be lighter.
 
 // module.exports.activateProduct = (req, res) => {
 //     let updates = {
-//        productId:req.body.productId, 
+//        productId:req.body.productId,
 //        isActive: true,
 //     };
 //     Product.findByIdAndUpdate(req.body.productId, updates, { new: true })
 //       .then((result) => res.send(result))
 //       .catch((err) => res.send(err));
 //   };
-  
-
-
-
