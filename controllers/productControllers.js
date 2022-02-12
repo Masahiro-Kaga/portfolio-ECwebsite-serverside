@@ -56,6 +56,19 @@ module.exports.activateProduct = (req, res) => {
     .catch((err) => res.send(err));
 };
 
+module.exports.changeStatus = async (req, res) => {
+  try {
+    await Product.findById(req.params.productId).then((result) => {
+      let updates = { isActive: !result.isActive };
+      Product.findByIdAndUpdate(req.params.productId, updates, { new: true })
+      .then((result) => res.send(result))
+      .catch((err) => res.send(err));
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
+};
+
 module.exports.getAllProducts = (req, res) => {
   Product.find({})
     .then((result) => res.send(result))
