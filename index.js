@@ -18,9 +18,8 @@ db.on("error",console.error.bind(console,"Connection Error"));
 db.once("open",()=>console.log("Connected to MongoDB"));
 
 const corsOptions = {
-    origin:"http://localhost:3000",
-    optionsSuccessStatus : 200,
-
+    origin:["http://localhost:3000","https://nervous-gates-59fb03.netlify.app"],
+    optionsSuccessStatus : 200
 }
 
 app.use(cors(corsOptions));
