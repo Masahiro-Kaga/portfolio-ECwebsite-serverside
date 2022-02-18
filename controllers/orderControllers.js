@@ -23,11 +23,14 @@ module.exports.order = async (req, res) => {
         orderId: newOrderId,
         quantity: product.quantity,
       });
-      found.save();
+      found
+        .save()
+        .then((orderObj) => (newOrderId = orderObj.id))
+        .catch((err) => err.message);
     });
   });
 };
- 
+
 module.exports.usersOrder = (req, res) => {
   Order.find({ userId: req.user.id })
     .then((orders) => res.send(orders))

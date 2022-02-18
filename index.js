@@ -5,6 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 
 dotenv.config();
+
 const port = process.env.PORT || 4001;
 
 mongoose.connect(process.env.MONGODB_URI,{
@@ -16,7 +17,13 @@ let db = mongoose.connection;
 db.on("error",console.error.bind(console,"Connection Error"));
 db.once("open",()=>console.log("Connected to MongoDB"));
 
-app.use(cors());
+const corsOptions = {
+    origin:"http://localhost:3000",
+    optionsSuccessStatus : 200,
+
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const userRoutes = require('./routes/userRoutes');
@@ -26,6 +33,7 @@ const productRoutes = require('./routes/productRoutes');
 app.use('/products',productRoutes);
 
 const orderRoutes = require('./routes/orderRoutes');
+const { response } = require("express");
 app.use('/orders', orderRoutes);
 
 app.listen(port, ()=> console.log(`Server Running on Localhosl:${process.env.PORT}`))
