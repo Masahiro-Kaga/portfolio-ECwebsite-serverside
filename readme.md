@@ -22,3 +22,6 @@ Archive Product (Admin only)
 Non-admin User checkout (Create Order)
 Retrieve authenticated user’s orders
 Retrieve all orders (Admin only)
+
+Heroku URL
+https://floating-stream-65303.herokuapp.com/ | https://git.heroku.com/floating-stream-65303.git
