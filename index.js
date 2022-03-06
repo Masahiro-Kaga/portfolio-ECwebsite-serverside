@@ -17,13 +17,13 @@ let db = mongoose.connection;
 db.on("error",console.error.bind(console,"Connection Error"));
 db.once("open",()=>console.log("Connected to MongoDB"));
 
-// const corsOptions = {
-//     origin:["http://localhost:3000","http://localhost:3001","https://nervous-gates-59fb03.netlify.app"],
-//     optionsSuccessStatus : 200
-// }
-// app.use(cors(corsOptions));
+const corsOptions = {
+    origin:["http://localhost:3000","http://localhost:3001","https://nervous-gates-59fb03.netlify.app"],
+    optionsSuccessStatus : 200
+}
+app.use(cors(corsOptions));
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 const userRoutes = require('./routes/userRoutes');
