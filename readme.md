@@ -17,7 +17,8 @@ Portfolio - EC website [Server Side]
 
 &emsp;Client and Server sides of code are separated.  
 &emsp;Please visit Client side Github page below as well.  
-&emsp;[Server side - https://github.com/Masahiro-Kaga/portfolio-ECwebsite-clientside](https://github.com/Masahiro-Kaga/portfolio-ECwebsite-clientside)
+&emsp;[Server side - https://github.com/Masahiro-Kaga/portfolio-ECwebsite-serverside](https://github.com/Masahiro-Kaga/portfolio-ECwebsite-serverside)  
+&emsp;All product pictures are provided by Unsplash(https://unsplash.com/).
 
 <br>
 
@@ -40,6 +41,7 @@ Portfolio - EC website [Server Side]
 - Fetch API.
 - React Bootstrap and Emotions are used for styling.
 - Material UI for Navbar as well.
+- Set CI/CD on deploy environment.
 - Use Mongodb as database.
 - Set Registration and authentication system for admin and login user with web token.
 - Three different menu between visitor/login user/admin.
@@ -70,7 +72,7 @@ Portfolio - EC website [Server Side]
 </div>
 <br>
 
-1. Toggle status(archive/active) and update product info.
+4. Toggle status(archive/active) and update product info.
 <div style="text-align:center ; display:flex ; flex-direction:row" >
     <img src="public/demo_gif/04_arcive_active_switch_and_update.gif" width="100%" height="auto">
 </div>
@@ -90,7 +92,7 @@ Portfolio - EC website [Server Side]
 <br>
 
 ## Want to add
-- Add function of stock product picture on cloud.
+- Add function of stock product picture on Cloudinary.
 
 <br>
 
